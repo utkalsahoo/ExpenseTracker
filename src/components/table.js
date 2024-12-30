@@ -50,11 +50,9 @@ export default function Table(props) {
                     <tbody className="divide-y divide-gray-800">
                       {props.items.map((item) => (
                         <tr key={item.category}>
-                          <td className="whitespace-nowrap text-left py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                            <span className="ht-0.5 w-0.5">
-                              <img src={item.img} />
-                            </span>{" "}
-                            {item.category}
+                          <td className="whitespace-nowrap text-left flex gap-4 py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
+                              <img className="h-8 w-10" src={item.img} />
+                           <div className="mt-1"> {item.category}</div>
                           </td>
                           <td className="whitespace-nowrap text-left px-3 py-4 text-sm text-gray-300">
                             {item.title}
@@ -63,7 +61,7 @@ export default function Table(props) {
                             {item.date}
                           </td>
                           <td className="whitespace-nowrap text-left px-3 py-4 text-sm text-gray-300">
-                            {item.expense}
+                            {item.expense}$
                           </td>
                         </tr>
                       ))}
